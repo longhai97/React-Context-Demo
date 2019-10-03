@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-import StylingContext from './styling/context';
+import withStyle from "./withStyle";
 
+@withStyle()
 export default class MyComponent extends Component {
-
-    static contextType = StylingContext;
 
     render() {
         return (
-            <p style={this.context.MyComponent}>
+            <p style={this.props.styleData}>
                 Some text
             </p>
         )
